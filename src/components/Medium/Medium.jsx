@@ -3,8 +3,9 @@ import Card from '../shared/Card/Card.jsx';
 import Loading from '../shared/Loading/Loading.jsx';
 
 export default function Medium() {
-  const [articles, setArticles] = useState([]);
+  const articles= useSelector((state) => state.medium.article);
   const [loading, setLoading] = useState(true);
+
   const articleCards = articles.map((article) => <Card key={article.id} article={article} />);
 
   return (
